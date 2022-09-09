@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import java.util.Random;
 
 public class Spark {
-    public int size = 5;
+    public int size = 300;
 
     public int x;
     public int y;
