@@ -43,7 +43,7 @@ public class _02_2DArrayPractice {
      *          "e", "f", "g", "e"
      */
     public String[][] test2() {
-        String[][] arra = new String[4][2];
+        String[][] arra = new String[2][4];
     	
         return arra;
     }
@@ -57,7 +57,7 @@ public class _02_2DArrayPractice {
      *          true, false
      */
     public Boolean[][] test3() {
-        Boolean[][] arr = new Boolean[1][4];
+        Boolean[][] arr = new Boolean[5][2];
         return arr;
     }
     
@@ -110,7 +110,11 @@ public class _02_2DArrayPractice {
     public Integer test6() {
         int[][] nums = { {8, 7, 6, 5}, {4, 3}, {2, 1, 0} };
         
-        return null;
+        int sum = 0;
+        for(int i = 0; i < nums[0].length; i++) {
+        	sum += nums[0][i];
+        	}
+        return sum;
     }
     
     /*
@@ -135,7 +139,7 @@ public class _02_2DArrayPractice {
         
     	int sum = 0;
         for(int i = 0; i < matrix.length; i++) {
-        	sum += matrix[i][row];
+        	sum += matrix[row][i];
         }
         
         return sum;
@@ -149,7 +153,7 @@ public class _02_2DArrayPractice {
         
     	int sum = 0;
         for(int i = 0; i < matrix.length; i++) {
-        	sum += matrix[col][i];
+        	sum += matrix[i][col];
         }
         
         return sum;
