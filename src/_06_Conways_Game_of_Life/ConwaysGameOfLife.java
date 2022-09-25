@@ -16,7 +16,7 @@ public class ConwaysGameOfLife extends JPanel implements ActionListener{
 
     public static final int WIDTH = 500;
     public static final int HEIGHT = 500;
-    public static final int CELLS_PER_ROW = 50;
+    public static final int CELLS_PER_ROW = 10;
 
     private JFrame window;
     private JPanel inputPanel;
@@ -50,6 +50,7 @@ public class ConwaysGameOfLife extends JPanel implements ActionListener{
         speedLabel = new JLabel("delay:");
         speedField = new JTextField(5);
         speedField.setText(Integer.toString(60));
+        
 
         inputPanel.add(startStopButton);
         inputPanel.add(speedLabel);
@@ -60,6 +61,7 @@ public class ConwaysGameOfLife extends JPanel implements ActionListener{
 
         gamePanel = new WorldPanel(WIDTH, HEIGHT, CELLS_PER_ROW);
         add(gamePanel, BorderLayout.CENTER);
+        window.addMouseListener(gamePanel);
 
         window.pack();
         window.setResizable(false);
