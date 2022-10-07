@@ -49,11 +49,75 @@
 package _07_The_Wrong_Way_Cow;
 
 public class TheWrongWayCow {
+	
+	
 
     public static int[] findWrongWayCow(final char[][] field) {
-        // Fill in the code to return the [col, row] coordinate position of the
-        // head (letter 'c') of the wrong way cow!
-        
-        return null;
+    	
+    	// VERSION 0.2.0
+    	
+    	/* Notes:
+    	 * 
+    	 * P1 = cow
+    	 * P2 = woc
+    	 * 
+    	 * P3 =
+    	 * c
+    	 * o
+    	 * w      
+    	 * 
+    	 * P4 =
+    	 * w
+    	 * o
+    	 * c
+    	 * 
+    	 */
+    	
+    	int P1 = 0;
+    	int P2 = 0;
+    	int P3 = 0;
+    	int P4 = 0;
+    	
+    	for(int i = 0; i < field.length-2; i++) {
+    		for(int j = 0; j < field[i].length; j++) {
+    			if(field[i][j] == 'c' && field[i+1][j] == 'o' && field[i+2][j] == 'w') {
+    				P1++;
+    			}
+    		}
+    	}
+    	
+    	for(int i = 0; i < field.length-2; i++) {
+    		for(int j = 0; j < field[i].length; j++) {
+    			if(field[i][j] == 'w' && field[i+1][j] == 'o' && field[i+2][j] == 'c') {
+    				P2++;
+    			}
+    		}
+    	}
+    	
+    	for(int i = 0; i < field.length; i++) {
+    		for(int j = 0; j < field[i].length-2; j++) {
+    			if(field[i][j] == 'c' && field[i][j+1] == 'o' && field[i][j+2] == 'w') {
+    				P3++;
+    			}
+    		}
+    	}
+    	
+    	for(int i = 0; i < field.length; i++) {
+    		for(int j = 0; j < field[i].length-2; j++) {
+    			if(field[i][j] == 'w' && field[i][j+1] == 'o' && field[i][j+2] == 'c') {
+    				P4++;
+    			}
+    		}
+    	}
+    	
+    	System.out.println("P1: "+P1+",P2: "+P2+",P3: "+P3+",P4: "+P4); // Remove this later
+    	
+    	
+    	return null; // Remove this later
     }
+    	
+	private static String String(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
