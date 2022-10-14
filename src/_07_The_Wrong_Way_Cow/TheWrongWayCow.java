@@ -81,7 +81,7 @@ public class TheWrongWayCow {
     	for(int i = 0; i < field.length-2; i++) {
     		for(int j = 0; j < field[i].length; j++) {
     			if(field[i][j] == 'c' && field[i+1][j] == 'o' && field[i+2][j] == 'w') {
-    				P1++;
+    				P3++;
     			}
     		}
     	}
@@ -89,7 +89,7 @@ public class TheWrongWayCow {
     	for(int i = 0; i < field.length-2; i++) {
     		for(int j = 0; j < field[i].length; j++) {
     			if(field[i][j] == 'w' && field[i+1][j] == 'o' && field[i+2][j] == 'c') {
-    				P2++;
+    				P4++;
     			}
     		}
     	}
@@ -97,7 +97,7 @@ public class TheWrongWayCow {
     	for(int i = 0; i < field.length; i++) {
     		for(int j = 0; j < field[i].length-2; j++) {
     			if(field[i][j] == 'c' && field[i][j+1] == 'o' && field[i][j+2] == 'w') {
-    				P3++;
+    				P1++;
     			}
     		}
     	}
@@ -105,19 +105,56 @@ public class TheWrongWayCow {
     	for(int i = 0; i < field.length; i++) {
     		for(int j = 0; j < field[i].length-2; j++) {
     			if(field[i][j] == 'w' && field[i][j+1] == 'o' && field[i][j+2] == 'c') {
-    				P4++;
+    				P2++;
     			}
     		}
     	}
     	
+    	
+    	if(P1 == 1) {
+    		for(int i = 0; i < field.length; i++) {
+        		for(int j = 0; j < field[i].length-2; j++) {
+        			if(field[i][j] == 'c' && field[i][j+1] == 'o' && field[i][j+2] == 'w') {
+        				return new int[] {j,i};
+        			}
+        		}
+        	}
+    	}
+    	
+    	if(P2 == 1) {
+    		for(int i = 0; i < field.length; i++) {
+        		for(int j = 0; j < field[i].length-2; j++) {
+        			if(field[i][j] == 'w' && field[i][j+1] == 'o' && field[i][j+2] == 'c') {
+        				return new int[] {j+2,i};
+        			}
+        		}
+        	}
+    	}
+    	
+    	if(P3 == 1) {
+    		for(int i = 0; i < field.length-2; i++) {
+        		for(int j = 0; j < field[i].length; j++) {
+        			if(field[i][j] == 'c' && field[i+1][j] == 'o' && field[i+2][j] == 'w') {
+        				return new int[] {j,i};
+        			}
+        		}
+        	}
+    	}
+    	
+    	if(P4 == 1) {
+    		for(int i = 0; i < field.length-2; i++) {
+        		for(int j = 0; j < field[i].length; j++) {
+        			if(field[i][j] == 'w' && field[i+1][j] == 'o' && field[i+2][j] == 'c') {
+        				return new int[] {j,i+2};
+        			}
+        		}
+        	}
+    	}
     	System.out.println("P1: "+P1+",P2: "+P2+",P3: "+P3+",P4: "+P4); // Remove this later
     	
-    	
+
     	return null; // Remove this later
     }
-    	
-	private static String String(int i) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
+    
 }
